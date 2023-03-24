@@ -1,21 +1,36 @@
 <!DOCTYPE html>
-<html>
-<head>
-	<title>Installment Calculator</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
-</head>
-<body>
-	<h1>Installment Calculator</h1>
-	<label for="credit-limit">Credit Limit:</label>
-	<input type="number" id="credit-limit" placeholder="Enter your credit limit">
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Installment Calculator</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <h1 class="title">Installment Calculator</h1>
+    </header>
 
-	<label for="bill-total">Bill Total:</label>
-	<input type="number" id="bill-total" placeholder="Enter your bill total">
-	<br>
-	<button onclick="calculateInstallments()">Calculate Installments</button>
+    <main class="main">
+      <form class="form">
+        <label class="form__label" for="credit-limit">Credit Limit:</label>
+        <input class="form__input" type="number" id="credit-limit" placeholder="Enter your credit limit" />
 
-	<div id="installments"></div>
+        <label class="form__label" for="bill-total">Bill Total:</label>
+        <input class="form__input" type="number" id="bill-total" placeholder="Enter your bill total" />
+        <br />
+        <button class="form__button" onclick="calculateInstallments()">Calculate Installments</button>
+      </form>
 
-	<script src="script.js"></script>
-</body>
+      <div class="installments">
+        <h2 class="installments__title">Installments:</h2>
+        <p class="installments__text" id="installment1"></p>
+        <p class="installments__text" id="installment2"></p>
+        <p class="installments__text" id="installment3"></p>
+      </div>
+    </main>
+
+    <script src="script.js"></script>
+  </body>
 </html>
