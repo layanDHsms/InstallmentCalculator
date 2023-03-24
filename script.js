@@ -1,6 +1,15 @@
+const creditLimitInput = document.getElementById("credit-limit");
+const billTotalInput = document.getElementById("bill-total");
+const installment1Output = document.getElementById("installment1");
+const installment2Output = document.getElementById("installment2");
+const installment3Output = document.getElementById("installment3");
+
+creditLimitInput.addEventListener("input", calculateInstallments);
+billTotalInput.addEventListener("input", calculateInstallments);
+
 function calculateInstallments() {
-  const creditLimit = Number(document.getElementById("credit-limit").value);
-  const billTotal = Number(document.getElementById("bill-total").value);
+  const creditLimit = Number(creditLimitInput.value);
+  const billTotal = Number(billTotalInput.value);
 
   let installment1, installment2, installment3;
 
@@ -14,11 +23,7 @@ function calculateInstallments() {
     installment3 = creditLimit / 2;
   }
 
-  const installmentsDiv = document.getElementById("installments");
-  installmentsDiv.innerHTML = "<h2>Installments:</h2>" +
-    "<p>1st Installment: " + installment1.toFixed(2) + "</p>" +
-    "<p>2nd Installment: " + installment2.toFixed(2) + "</p>" +
-    "<p>3rd Installment: " + installment3.toFixed(2) + "</p>";
+  installment1Output.textContent = installment1.toFixed(2);
+  installment2Output.textContent = installment2.toFixed(2);
+  installment3Output.textContent = installment3.toFixed(2);
 }
-
-document.getElementById("calculate-button").addEventListener("click", calculateInstallments);
